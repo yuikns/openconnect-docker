@@ -1,0 +1,13 @@
+#!/bin/sh
+
+/sbin/sshd
+
+ps -ef
+
+echo "ANYCONNECT_SERVER: $ANYCONNECT_SERVER"
+echo "ANYCONNECT_GROUP:  $ANYCONNECT_GROUP"
+echo "ANYCONNECT_USER:   $ANYCONNECT_USER"
+
+
+( echo $ANYCONNECT_GROUP; echo $ANYCONNECT_PASSWORD; echo "push" ) | openconnect $ANYCONNECT_SERVER --user=$ANYCONNECT_USER --timestamp
+

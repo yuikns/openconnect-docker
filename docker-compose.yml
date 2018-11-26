@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  cisco:
+    build: ./
+    image: yuikns/openconnect
+    restart: "no"
+    environment:
+    - ANYCONNECT_SERVER=${ANYCONNECT_SERVER}
+    - ANYCONNECT_USER=${ANYCONNECT_USER}
+    - ANYCONNECT_PASSWORD=${ANYCONNECT_PASSWORD}
+    - ANYCONNECT_GROUP=gatech-2fa-Duo
+    cap_add:
+    - NET_ADMIN
+    privileged: true
+    ports:
+    - "32323:22"
+
