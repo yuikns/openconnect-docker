@@ -1,4 +1,4 @@
-# Open Connect Agent
+# OpenConnect VPN Agent
 
 ## Setup
 
